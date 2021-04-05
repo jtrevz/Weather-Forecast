@@ -1,0 +1,72 @@
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  background-color:#5c2018;
+  height: 90px;
+}
+
+h2{
+  text-align: center;
+  color: white;
+  padding: 25px;
+}
+body{
+  background-color: #f3e0dc
+}
+#idname h2 {
+  text-align: center;
+  font-weight: 900;
+}
+
+.jumby h2 {
+  text-align: center;
+  color: white;
+  padding: 5px;
+}
+
+.jumby {
+  background-color: #f3e0dc
+}
+
+
+#sidebar {
+  padding: 30px;
+}
+#console {
+  margin:10px;
+  padding:0 20px 0 20px;
+}
+
+#cardrow {
+  margin: 10px;
+  margin-top: none;
+}
+
+
+.daycard {
+  max-height: 250px;
+  background-color: #d4a59a;
+  margin: 5px;
+  padding: 1%;
+}
+
+#cityweather {
+ height: fit-content;
+ padding: 1%;
+ margin-bottom: none;
+}
+
+#cityweather h1{
+padding: 1%;
+}
+
+#cityweather h2{
+  text-align: center;
+}
+
+.allbuttons{
+  background-color: #5c2018;
+  color: white;
+}
