@@ -11,15 +11,15 @@
     />
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/style.css"/>
     <title>Weather Forecast</title>
   </head>
   <header>
     <h2>Weather Forecast</h2>
   </header>
   <body>
-    <div  id= "container" class="row row ">
-      <div id="sidebar" class="col col-4 col-md-3 mx-auto">
+    <div  id= "container" class="row row">
+      <div id="sidebar" class="col col-5 col-md-3 mx-auto">
         <h3>Search your City</h3>
         <div class="input-group mb-3">
           <input
@@ -29,69 +29,69 @@
               placeholder="Your city"
               aria-label="Recipient's username"
               aria-describedby="basic-addon2"/>
-          <div class="input-group-append">
+            <div class="input-group-append">
               <button
               id="searchBtn">Search</button>
+            </div>
         </div>
+        <div id="errorMsg" class="hide">You made an error. Please write a city name.</div>
       </div>
-      
-      </div>
-      <div id="console" class="col col-6 col-md-9 mx-auto container-md">
+      <div id="console" class="col col-6 col-md-9 mx-auto container-md hide">
         <div id="cityweather" class="jumbotron jumbotron-fluid jumby">
           <div class="container">
-            <h2 id="date">Sunday, April 4th</h2>
-            <h3 id="cityname">Houston</h3>
+            <h2 id="date"></h2>
+            <h3 id="cityname"></h3>
               <p class="lead">Temperature: <span id="maintemp"></span>°
               </p>
             <p class="lead">Wind: <span id="mainwind"></span> MPH
             </p>
             <p class="lead">Humidity: <span id="mainhumid"></span>%
             </p>
-            <p class="lead">UV Index: <span id="uv"></span>
+            <p class="lead">UV Index:<div id="uvbox"><span id="uv"></span></div>
             </p>
           </div>
         </div>
         <div  id="cardrow" class= "row">
-          <div class="col card text-white mb-35 daycard" style="max-width: 18rem;">
-            <div id='day1' class="card-header day">Monday</div>
+          <div class="col card text-white mb-35 daycard" >
+            <div id='day1' class="card-header day"><span id="oneDayAway"></div>
             <div class="card-body">
-              <h5 class="emoji"></h5>
+              <div class="wPic"></div>
+              <p class="card-text">Temp: <span class="daytemp"></span>°</p>
+              <p class="card-text">Wind: <span class="daywind"></span> MPH</p>
+              <p class="cart-text">Humidity: <span class="dayhumid"></span>%</p>
+            </div>
+          </div>
+          <div class="col card text-white mb-35 daycard" >
+            <div id='day1' class="card-header day"><span id="twoDayAway"></span></div>
+            <div class="card-body">
+              <div class="wPic"></div>
               <p class="card-text">Temp: <span class="daytemp"></span>°</p>
               <p class="card-text">Wind: <span class="daywind"></span> MPH</p>
               <p class="cart-text">Humidity: <span class="dayhumid"></span>%</p>
             </div>
           </div>
           <div class="col card text-white mb-35 daycard" style="max-width: 18rem;">
-            <div id='day1' class="card-header day">Monday</div>
+            <div id='day1' class="card-header day"><span id="threeDayAway"></span></div>
             <div class="card-body">
-              <h5 class="emoji"></h5>
+              <div class="wPic"></div>
               <p class="card-text">Temp: <span class="daytemp"></span>°</p>
               <p class="card-text">Wind: <span class="daywind"></span> MPH</p>
               <p class="cart-text">Humidity: <span class="dayhumid"></span>%</p>
             </div>
           </div>
-          <div class="col card text-white mb-35 daycard" style="max-width: 18rem;">
-            <div id='day1' class="card-header day">Monday</div>
+          <div class="col card text-white mb-35 daycard">
+            <div id='day1' class="card-header day"><span id="fourDayAway"></div>
             <div class="card-body">
-              <h5 class="emoji"></h5>
+              <div class="wPic"></div>
               <p class="card-text">Temp: <span class="daytemp"></span>°</p>
               <p class="card-text">Wind: <span class="daywind"></span> MPH</p>
               <p class="cart-text">Humidity: <span class="dayhumid"></span>%</p>
             </div>
           </div>
-          <div class="col card text-white mb-35 daycard" style="max-width: 18rem;">
-            <div id='day1' class="card-header day">Monday</div>
+          <div class="col card text-white mb-35 daycard">
+            <div id='day1' class="card-header day"><span id="fiveDayAway"></div>
             <div class="card-body">
-              <h5 class="emoji"></h5>
-              <p class="card-text">Temp: <span class="daytemp"></span>°</p>
-              <p class="card-text">Wind: <span class="daywind"></span> MPH</p>
-              <p class="cart-text">Humidity: <span class="dayhumid"></span>%</p>
-            </div>
-          </div>
-          <div class="col card text-white mb-35 daycard" style="max-width: 18rem;">
-            <div id='day1' class="card-header day">Monday</div>
-            <div class="card-body">
-              <h5 class="emoji"></h5>
+              <div class="wPic"></div>
               <p class="card-text">Temp: <span class="daytemp"></span>°</p>
               <p class="card-text">Wind: <span class="daywind"></span> MPH</p>
               <p class="cart-text">Humidity: <span class="dayhumid"></span>%</p>
@@ -100,6 +100,10 @@
         </div>
       </div>
     </div>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
